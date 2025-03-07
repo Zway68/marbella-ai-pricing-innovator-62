@@ -1,20 +1,26 @@
-
 import { useParallax } from '@/lib/animations';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocation } from 'react-router-dom';
 
 const Hero = () => {
   const parallaxBg = useParallax(0.05);
   const { t } = useLanguage();
+  const location = useLocation();
+
+  const getSectionLink = (sectionId: string) => {
+    if (location.pathname === '/') {
+      return `#${sectionId}`;
+    }
+    return `/#${sectionId}`;
+  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-      {/* Background Gradient */}
       <div 
         ref={parallaxBg}
         className="absolute inset-0 bg-gradient-to-b from-marbella-50 to-white -z-10"
       />
       
-      {/* Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden -z-10">
         <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-marbella-100/50 blur-3xl" />
         <div className="absolute bottom-1/3 left-1/3 w-96 h-96 rounded-full bg-marbella-200/30 blur-3xl" />
@@ -39,17 +45,16 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 animate-fade-in" style={{ animationDelay: '400ms' }}>
-            <a href="#pricing" className="button-primary">
+            <a href={getSectionLink('pricing')} className="button-primary">
               {t('View Pricing Options', '查看价格选项')}
             </a>
-            <a href="#contact" className="button-outline">
+            <a href={getSectionLink('contact')} className="button-outline">
               {t('Contact Us', '联系我们')}
             </a>
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 rounded-full border-2 border-marbella-400 flex justify-center">
           <div className="w-1.5 h-3 bg-marbella-400 rounded-full mt-2 animate-pulse-subtle"></div>

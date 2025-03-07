@@ -1,8 +1,7 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -10,7 +9,8 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useLanguage();
-
+  const location = useLocation();
+  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -23,6 +23,16 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Helper function to create the correct link based on current location
+  const getSectionLink = (sectionId: string) => {
+    // If we're already on the home page, just use the anchor
+    if (location.pathname === '/') {
+      return `#${sectionId}`;
+    }
+    // Otherwise, go to home page and then to the section
+    return `/#${sectionId}`;
+  };
 
   return (
     <nav
@@ -42,10 +52,10 @@ const Navbar = () => {
         <div className="hidden md:flex items-center space-x-8">
           <Link to="/" className="nav-link">{t('Home', '首页')}</Link>
           <Link to="/about" className="nav-link">{t('About Us', '关于我们')}</Link>
-          <a href="#pricing" className="nav-link">{t('Pricing', '价格')}</a>
-          <a href="#mentors" className="nav-link">{t('Mentors', '导师')}</a>
-          <a href="#testimonials" className="nav-link">{t('Testimonials', '客户见证')}</a>
-          <a href="#contact" className="button-primary">{t('Contact Us', '联系我们')}</a>
+          <a href={getSectionLink('pricing')} className="nav-link">{t('Pricing', '价格')}</a>
+          <a href={getSectionLink('mentors')} className="nav-link">{t('Mentors', '导师')}</a>
+          <a href={getSectionLink('testimonials')} className="nav-link">{t('Testimonials', '客户见证')}</a>
+          <a href={getSectionLink('contact')} className="button-primary">{t('Contact Us', '联系我们')}</a>
           <LanguageSwitcher />
         </div>
 
@@ -84,28 +94,28 @@ const Navbar = () => {
             {t('About Us', '关于我们')}
           </Link>
           <a
-            href="#pricing"
+            href={getSectionLink('pricing')}
             className="text-lg font-medium text-marbella-800 hover:text-marbella-500 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             {t('Pricing', '价格')}
           </a>
           <a
-            href="#mentors"
+            href={getSectionLink('mentors')}
             className="text-lg font-medium text-marbella-800 hover:text-marbella-500 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             {t('Mentors', '导师')}
           </a>
           <a
-            href="#testimonials"
+            href={getSectionLink('testimonials')}
             className="text-lg font-medium text-marbella-800 hover:text-marbella-500 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             {t('Testimonials', '客户见证')}
           </a>
           <a
-            href="#contact"
+            href={getSectionLink('contact')}
             className="button-primary mt-4 w-full text-center"
             onClick={() => setIsMenuOpen(false)}
           >

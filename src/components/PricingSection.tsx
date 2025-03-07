@@ -1,10 +1,18 @@
-
 import AnimatedReveal from './AnimatedReveal';
 import { Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocation } from 'react-router-dom';
 
 const PricingSection = () => {
   const { t } = useLanguage();
+  const location = useLocation();
+  
+  const getSectionLink = (sectionId: string) => {
+    if (location.pathname === '/') {
+      return `#${sectionId}`;
+    }
+    return `/#${sectionId}`;
+  };
   
   return (
     <section id="pricing" className="section-padding bg-gradient-to-b from-white to-marbella-50">
@@ -27,7 +35,6 @@ const PricingSection = () => {
         </AnimatedReveal>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {/* Core Tuition Fees */}
           <AnimatedReveal delay={100}>
             <div className="pricing-card h-full flex flex-col">
               <div className="mb-6">
@@ -83,7 +90,6 @@ const PricingSection = () => {
             </div>
           </AnimatedReveal>
 
-          {/* Premium Services */}
           <AnimatedReveal delay={200}>
             <div className="pricing-card h-full flex flex-col">
               <div className="mb-6">
@@ -139,7 +145,6 @@ const PricingSection = () => {
             </div>
           </AnimatedReveal>
 
-          {/* Corporate Partnerships */}
           <AnimatedReveal delay={300}>
             <div className="pricing-card h-full flex flex-col">
               <div className="mb-6">
@@ -195,7 +200,6 @@ const PricingSection = () => {
             </div>
           </AnimatedReveal>
 
-          {/* Scholarships & Financial Aid */}
           <AnimatedReveal delay={400}>
             <div className="pricing-card h-full flex flex-col">
               <div className="mb-6">
@@ -247,7 +251,7 @@ const PricingSection = () => {
 
         <AnimatedReveal delay={500}>
           <div className="text-center mt-16">
-            <a href="#contact" className="button-primary">{t('Discuss Your Options', '讨论您的选择')}</a>
+            <a href={getSectionLink('contact')} className="button-primary">{t('Discuss Your Options', '讨论您的选择')}</a>
           </div>
         </AnimatedReveal>
       </div>
