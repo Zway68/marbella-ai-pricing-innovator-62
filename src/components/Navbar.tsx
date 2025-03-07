@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -10,6 +11,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useLanguage();
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
   
   useEffect(() => {
     const handleScroll = () => {
@@ -52,10 +54,17 @@ const Navbar = () => {
         <div className="hidden md:flex items-center space-x-8">
           <Link to="/" className="nav-link">{t('Home', '首页')}</Link>
           <Link to="/about" className="nav-link">{t('About Us', '关于我们')}</Link>
-          <a href={getSectionLink('pricing')} className="nav-link">{t('Pricing', '价格')}</a>
-          <a href={getSectionLink('mentors')} className="nav-link">{t('Mentors', '导师')}</a>
-          <a href={getSectionLink('testimonials')} className="nav-link">{t('Testimonials', '客户见证')}</a>
-          <a href={getSectionLink('contact')} className="button-primary">{t('Contact Us', '联系我们')}</a>
+          
+          {/* Only show section links on home page */}
+          {isHomePage && (
+            <>
+              <a href="#pricing" className="nav-link">{t('Pricing', '价格')}</a>
+              <a href="#mentors" className="nav-link">{t('Mentors', '导师')}</a>
+              <a href="#testimonials" className="nav-link">{t('Testimonials', '客户见证')}</a>
+            </>
+          )}
+          
+          <a href={isHomePage ? "#contact" : "/#contact"} className="button-primary">{t('Contact Us', '联系我们')}</a>
           <LanguageSwitcher />
         </div>
 
@@ -93,29 +102,36 @@ const Navbar = () => {
           >
             {t('About Us', '关于我们')}
           </Link>
+          
+          {/* Only show section links on home page */}
+          {isHomePage && (
+            <>
+              <a
+                href="#pricing"
+                className="text-lg font-medium text-marbella-800 hover:text-marbella-500 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('Pricing', '价格')}
+              </a>
+              <a
+                href="#mentors"
+                className="text-lg font-medium text-marbella-800 hover:text-marbella-500 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('Mentors', '导师')}
+              </a>
+              <a
+                href="#testimonials"
+                className="text-lg font-medium text-marbella-800 hover:text-marbella-500 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('Testimonials', '客户见证')}
+              </a>
+            </>
+          )}
+          
           <a
-            href={getSectionLink('pricing')}
-            className="text-lg font-medium text-marbella-800 hover:text-marbella-500 transition-colors"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            {t('Pricing', '价格')}
-          </a>
-          <a
-            href={getSectionLink('mentors')}
-            className="text-lg font-medium text-marbella-800 hover:text-marbella-500 transition-colors"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            {t('Mentors', '导师')}
-          </a>
-          <a
-            href={getSectionLink('testimonials')}
-            className="text-lg font-medium text-marbella-800 hover:text-marbella-500 transition-colors"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            {t('Testimonials', '客户见证')}
-          </a>
-          <a
-            href={getSectionLink('contact')}
+            href={isHomePage ? "#contact" : "/#contact"}
             className="button-primary mt-4 w-full text-center"
             onClick={() => setIsMenuOpen(false)}
           >
