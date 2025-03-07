@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,13 +31,14 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto flex items-center justify-between">
-        <a href="/" className="text-2xl font-bold text-marbella-900 tracking-tight">
+        <Link to="/" className="text-2xl font-bold text-marbella-900 tracking-tight">
           Marbella<span className="text-marbella-500">AI</span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <a href="#program" className="nav-link">Program</a>
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/about" className="nav-link">About Us</Link>
           <a href="#pricing" className="nav-link">Pricing</a>
           <a href="#mentors" className="nav-link">Mentors</a>
           <a href="#testimonials" className="nav-link">Testimonials</a>
@@ -60,13 +62,20 @@ const Navbar = () => {
         )}
       >
         <div className="flex flex-col space-y-6 items-center">
-          <a
-            href="#program"
+          <Link
+            to="/"
             className="text-lg font-medium text-marbella-800 hover:text-marbella-500 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
-            Program
-          </a>
+            Home
+          </Link>
+          <Link
+            to="/about"
+            className="text-lg font-medium text-marbella-800 hover:text-marbella-500 transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            About Us
+          </Link>
           <a
             href="#pricing"
             className="text-lg font-medium text-marbella-800 hover:text-marbella-500 transition-colors"
