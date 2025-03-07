@@ -2,7 +2,7 @@
 import AnimatedReveal from '@/components/AnimatedReveal';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { GraduationCap, LightBulb, Brain, Users } from 'lucide-react';
+import { GraduationCap, Lightbulb, Brain, Users } from 'lucide-react';
 
 const About = () => {
   return (
@@ -57,7 +57,7 @@ const About = () => {
               <div className="glass-card rounded-2xl p-8 mb-12">
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 rounded-full bg-marbella-100 flex items-center justify-center mr-4">
-                    <LightBulb className="w-6 h-6 text-marbella-600" />
+                    <Lightbulb className="w-6 h-6 text-marbella-600" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-marbella-950">Harvard Innovation Lab</h2>
                 </div>
