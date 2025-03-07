@@ -3,10 +3,13 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,21 +40,25 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="nav-link">Home</Link>
-          <Link to="/about" className="nav-link">About Us</Link>
-          <a href="#pricing" className="nav-link">Pricing</a>
-          <a href="#mentors" className="nav-link">Mentors</a>
-          <a href="#testimonials" className="nav-link">Testimonials</a>
-          <a href="#contact" className="button-primary">Contact Us</a>
+          <Link to="/" className="nav-link">{t('Home', '首页')}</Link>
+          <Link to="/about" className="nav-link">{t('About Us', '关于我们')}</Link>
+          <a href="#pricing" className="nav-link">{t('Pricing', '价格')}</a>
+          <a href="#mentors" className="nav-link">{t('Mentors', '导师')}</a>
+          <a href="#testimonials" className="nav-link">{t('Testimonials', '客户见证')}</a>
+          <a href="#contact" className="button-primary">{t('Contact Us', '联系我们')}</a>
+          <LanguageSwitcher />
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-marbella-700 focus:outline-none"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center gap-4">
+          <LanguageSwitcher />
+          <button
+            className="text-marbella-700 focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -67,42 +74,42 @@ const Navbar = () => {
             className="text-lg font-medium text-marbella-800 hover:text-marbella-500 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
-            Home
+            {t('Home', '首页')}
           </Link>
           <Link
             to="/about"
             className="text-lg font-medium text-marbella-800 hover:text-marbella-500 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
-            About Us
+            {t('About Us', '关于我们')}
           </Link>
           <a
             href="#pricing"
             className="text-lg font-medium text-marbella-800 hover:text-marbella-500 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
-            Pricing
+            {t('Pricing', '价格')}
           </a>
           <a
             href="#mentors"
             className="text-lg font-medium text-marbella-800 hover:text-marbella-500 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
-            Mentors
+            {t('Mentors', '导师')}
           </a>
           <a
             href="#testimonials"
             className="text-lg font-medium text-marbella-800 hover:text-marbella-500 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
-            Testimonials
+            {t('Testimonials', '客户见证')}
           </a>
           <a
             href="#contact"
             className="button-primary mt-4 w-full text-center"
             onClick={() => setIsMenuOpen(false)}
           >
-            Contact Us
+            {t('Contact Us', '联系我们')}
           </a>
         </div>
       </div>
