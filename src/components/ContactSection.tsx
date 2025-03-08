@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import AnimatedReveal from './AnimatedReveal';
 import { Mail, Phone, Send } from 'lucide-react';
@@ -28,7 +27,6 @@ const ContactSection = () => {
     
     try {
       // Store the contact submission in Supabase
-      // Check the console for the exact column names that your table has
       console.log('Submitting form with data:', formData);
       
       const { error } = await supabase
@@ -36,8 +34,7 @@ const ContactSection = () => {
         .insert([
           { 
             name: formData.name,
-            // Only include fields that actually exist in your Supabase table
-            // If 'email' doesn't exist, we need to adapt our code
+            email: formData.email,
             message: formData.message,
             phone_number: formData.phone || null,
             created_at: new Date().toISOString()
