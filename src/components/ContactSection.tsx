@@ -4,10 +4,12 @@ import AnimatedReveal from './AnimatedReveal';
 import { Mail, Phone, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { supabase } from '@/lib/supabase';
 
 const ContactSection = () => {
   const { toast } = useToast();
   const { t } = useLanguage();
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,22 +22,49 @@ const ContactSection = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // In a real application, you would send this data to your backend
+    setIsLoading(true);
     
-    toast({
-      title: t("Message sent!", "消息已发送！"),
-      description: t("We'll get back to you as soon as possible.", "我们会尽快回复您。"),
-    });
-    
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: '',
-    });
+    try {
+      // Store the contact submission in Supabase
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([
+          { 
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone || null,
+            message: formData.message,
+            created_at: new Date().toISOString()
+          }
+        ]);
+        
+      if (error) throw error;
+      
+      // Show success toast
+      toast({
+        title: t("Message sent!", "消息已发送！"),
+        description: t("We'll get back to you as soon as possible.", "我们会尽快回复您。"),
+      });
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: t("Something went wrong", "出现了问题"),
+        description: t("Please try again later.", "请稍后再试。"),
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -109,6 +138,7 @@ const ContactSection = () => {
                     className="w-full px-4 py-3 rounded-lg border border-marbella-200 focus:ring-2 focus:ring-marbella-400 focus:border-transparent transition-all outline-none"
                     required
                     placeholder={t('Enter your name', '输入您的姓名')}
+                    disabled={isLoading}
                   />
                 </div>
                 
@@ -125,6 +155,7 @@ const ContactSection = () => {
                     className="w-full px-4 py-3 rounded-lg border border-marbella-200 focus:ring-2 focus:ring-marbella-400 focus:border-transparent transition-all outline-none"
                     required
                     placeholder={t('Enter your email', '输入您的电子邮箱')}
+                    disabled={isLoading}
                   />
                 </div>
                 
@@ -140,6 +171,7 @@ const ContactSection = () => {
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-marbella-200 focus:ring-2 focus:ring-marbella-400 focus:border-transparent transition-all outline-none"
                     placeholder={t('Enter your phone number', '输入您的电话号码')}
+                    disabled={isLoading}
                   />
                 </div>
                 
@@ -156,15 +188,23 @@ const ContactSection = () => {
                     className="w-full px-4 py-3 rounded-lg border border-marbella-200 focus:ring-2 focus:ring-marbella-400 focus:border-transparent transition-all outline-none resize-none"
                     required
                     placeholder={t('Write your message here...', '在此处撰写您的留言...')}
+                    disabled={isLoading}
                   ></textarea>
                 </div>
                 
                 <button
                   type="submit"
                   className="button-primary w-full flex items-center justify-center"
+                  disabled={isLoading}
                 >
-                  <span>{t('Send Message', '发送留言')}</span>
-                  <Send className="w-4 h-4 ml-2" />
+                  {isLoading ? (
+                    <span>{t('Sending...', '发送中...')}</span>
+                  ) : (
+                    <>
+                      <span>{t('Send Message', '发送留言')}</span>
+                      <Send className="w-4 h-4 ml-2" />
+                    </>
+                  )}
                 </button>
               </form>
             </div>
