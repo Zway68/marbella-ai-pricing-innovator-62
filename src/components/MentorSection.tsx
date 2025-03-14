@@ -1,4 +1,3 @@
-
 import AnimatedReveal from './AnimatedReveal';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -13,7 +12,7 @@ const mentors = [
       en: "Dr. Jason Xiaotian Dou is the Founder of Marbella Education. He has been a Postdoc Research Fellow in AI at Harvard. He did a Ph.D. in Computer Engineering at the University of Pittsburgh working on Machine Learning with applications in Healthcare, Biology, Mobile, Finance, Social Science, and Operations.",
       zh: "杜晓天博士是Marbella Education的创始人。他曾是哈佛大学人工智能博士后研究员。他在匹兹堡大学获得计算机工程博士学位，致力于机器学习在医疗、生物、移动、金融、社会科学和运营中的应用研究。"
     },
-    image: "/lovable-uploads/595aac52-df66-4a2e-bf3b-1e925eb3f817.png"
+    image: "/lovable-uploads/99a9c771-b961-43a7-a48a-35e580a4bfb8.png"
   },
   {
     name: "Will Haver",
@@ -25,7 +24,7 @@ const mentors = [
       en: "Seasoned Leader and Serial Entrepreneur. Spearheaded the successful creation and growth of two ventures during his tenure at Wake Forest University: Accountable Care Limited Partnership and Haver Limited Partnership, a quantitative hedge fund.",
       zh: "资深领导者和连续创业者。在韦克森林大学任职期间，成功创建并发展了两个企业：Accountable Care有限合伙公司和Haver有限合伙公司，这是一家量化对冲基金。"
     },
-    image: "/lovable-uploads/99a9c771-b961-43a7-a48a-35e580a4bfb8.png"
+    image: "/lovable-uploads/595aac52-df66-4a2e-bf3b-1e925eb3f817.png"
   },
   {
     name: "Dr. Anna Yushuang Xu",
