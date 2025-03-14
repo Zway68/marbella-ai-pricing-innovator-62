@@ -11,7 +11,7 @@ const mentors = [
     },
     bio: {
       en: "Dr. Jason Xiaotian Dou is the Founder of Marbella Education. He has been a Postdoc Research Fellow in AI at Harvard. He did a Ph.D. in Computer Engineering at the University of Pittsburgh working on Machine Learning with applications in Healthcare, Biology, Mobile, Finance, Social Science, and Operations.",
-      zh: "杜晓天博士是Marbella Education的创始人。他曾是哈佛大学人工智能博士后研究员。他在匹兹堡大学获得计算机工程博士学位，致力于机器学习在医疗、生物、移动、金融、社会科学和运营中的应用研究。"
+      zh: "Dr. Jason Xiaotian Dou 是Marbella Education的创始人。他曾是哈佛大学人工智能博士后研究员。他在匹兹堡大学获得计算机工程博士学位，致力于机器学习在医疗、生物、移动、金融、社会科学和运营中的应用研究。"
     },
     image: "/lovable-uploads/99a9c771-b961-43a7-a48a-35e580a4bfb8.png"
   },
@@ -23,7 +23,7 @@ const mentors = [
     },
     bio: {
       en: "Seasoned Leader and Serial Entrepreneur. Spearheaded the successful creation and growth of two ventures during his tenure at Wake Forest University: Accountable Care Limited Partnership and Haver Limited Partnership, a quantitative hedge fund.",
-      zh: "资深领导者和连续创业者。在韦克森林大学任职期间，成功创建并发展了两个企业：Accountable Care有限合伙公司和Haver有限合伙公司，这是一家量化对冲基金。"
+      zh: "Will Haver 是资深领导者和连续创业者。在韦克森林大学任职期间，成功创建并发展了两个企业：Accountable Care有限合伙公司和Haver有限合伙公司，这是一家量化对冲基金。"
     },
     image: "/lovable-uploads/595aac52-df66-4a2e-bf3b-1e925eb3f817.png"
   },
@@ -35,7 +35,7 @@ const mentors = [
     },
     bio: {
       en: "Dr. Xu is the Founder and CEO of 111sign.com, an innovative AI-empowered design company. She holds an MBA from Harvard Business School. Dr. Xu did undergraduate studies at Peking University Health Science Center and the University of Vienna.",
-      zh: "徐玉双博士是111sign.com的创始人兼首席执行官，这是一家创新的AI驱动设计公司。她持有哈佛商学院MBA学位。徐博士在北京大学医学部和维也纳大学完成了本科学习。"
+      zh: "Dr. Anna Yushuang Xu 是111sign.com的创始人兼首席执行官，这是一家创新的AI驱动设计公司。她持有哈佛商学院MBA学位。她在北京大学医学部和维也纳大学完成了本科学习。"
     },
     image: "/lovable-uploads/ee34822a-fa90-420b-b3af-39ce33017be6.png"
   },
@@ -47,7 +47,7 @@ const mentors = [
     },
     bio: {
       en: "Fiona Zhang is the founder and CEO of AvaPlus, a cutting-edge software AI company that leverages digital avatars to enhance content creation. She is also the co-founder of ZLead, a global incubator based in Shanghai.",
-      zh: "张飞娜是AvaPlus的创始人兼CEO，这是一家利用数字化身增强内容创作的前沿软件AI公司。她还是总部位于上海的全球孵化器ZLead的联合创始人。"
+      zh: "Fiona Zhang 是AvaPlus的创始人兼CEO，这是一家利用数字化身增强内容创作的前沿软件AI公司。她还是总部位于上海的全球孵化器ZLead的联合创始人。"
     },
     image: "/lovable-uploads/f8ce437c-36a6-4fa2-9e44-cceccf52d9a8.png"
   },
@@ -59,7 +59,7 @@ const mentors = [
     },
     bio: {
       en: "Xander Wu is the fund manager at the Future Foundation, where he focuses on investing in global equities. His extensive experience includes roles at major banks and brokerage firms in China.",
-      zh: "吴亚山是未来基金会的基金经理，专注于全球股票投资。他拥有丰富的经验，曾在中国的主要银行和券商担任职务。"
+      zh: "Xander Wu 是未来基金会的基金经理，专注于全球股票投资。他拥有丰富的经验，曾在中国的主要银行和券商担任职务。"
     },
     image: "/lovable-uploads/513e6c63-9692-4919-98f7-b13806a1d698.png"
   }
