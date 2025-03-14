@@ -13,7 +13,7 @@ const mentors = [
       en: "Dr. Jason Xiaotian Dou is the Founder of Marbella Education. He has been a Postdoc Research Fellow in AI at Harvard. He did a Ph.D. in Computer Engineering at the University of Pittsburgh working on Machine Learning with applications in Healthcare, Biology, Mobile, Finance, Social Science, and Operations.",
       zh: "杜晓天博士是Marbella Education的创始人。他曾是哈佛大学人工智能博士后研究员。他在匹兹堡大学获得计算机工程博士学位，致力于机器学习在医疗、生物、移动、金融、社会科学和运营中的应用研究。"
     },
-    image: "/lovable-uploads/513e6c63-9692-4919-98f7-b13806a1d698.png"
+    image: "/lovable-uploads/595aac52-df66-4a2e-bf3b-1e925eb3f817.png"
   },
   {
     name: "Will Haver",
@@ -61,7 +61,7 @@ const mentors = [
       en: "Xander Wu is the fund manager at the Future Foundation, where he focuses on investing in global equities. His extensive experience includes roles at major banks and brokerage firms in China.",
       zh: "吴亚山是未来基金会的基金经理，专注于全球股票投资。他拥有丰富的经验，曾在中国的主要银行和券商担任职务。"
     },
-    image: "/lovable-uploads/595aac52-df66-4a2e-bf3b-1e925eb3f817.png"
+    image: "/lovable-uploads/513e6c63-9692-4919-98f7-b13806a1d698.png"
   }
 ];
 
