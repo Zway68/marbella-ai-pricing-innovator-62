@@ -162,8 +162,8 @@ const About = () => {
                 <div className="md:w-1/3 flex-shrink-0">
                   <div className="w-48 h-48 rounded-full bg-marbella-100 overflow-hidden mx-auto">
                     <img
-                      src="/placeholder.svg"
-                      alt={t('Dr. Jason Dou', 'Jason Dou 博士')}
+                      src="/lovable-uploads/99a9c771-b961-43a7-a48a-35e580a4bfb8.png"
+                      alt="Dr. Jason Xiaotian Dou"
                       className="w-full h-full object-cover"
                     />
                   </div>
