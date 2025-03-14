@@ -1,3 +1,4 @@
+
 import AnimatedReveal from './AnimatedReveal';
 import { useLanguage } from '@/contexts/LanguageContext';
 
