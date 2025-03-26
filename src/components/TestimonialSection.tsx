@@ -49,25 +49,27 @@ const TestimonialSection = () => {
           </div>
         </AnimatedReveal>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((testimonial, index) => (
-            <AnimatedReveal key={index} delay={100 * index}>
-              <div className="testimonial-card h-full flex flex-col">
-                <div className="mb-4 text-marbella-400">
-                  <Quote size={32} />
+        <div className="flex flex-col items-center justify-center max-w-4xl mx-auto">
+          <div className="grid gap-8 md:grid-cols-2 w-full">
+            {testimonials.map((testimonial, index) => (
+              <AnimatedReveal key={index} delay={100 * index}>
+                <div className="testimonial-card h-full flex flex-col">
+                  <div className="mb-4 text-marbella-400">
+                    <Quote size={32} />
+                  </div>
+                  
+                  <p className="text-marbella-700 text-lg italic mb-6 flex-grow">
+                    "{language === 'en' ? testimonial.quote.en : testimonial.quote.zh}"
+                  </p>
+                  
+                  <div className="mt-auto">
+                    <h4 className="font-semibold text-marbella-900">{testimonial.name}</h4>
+                    <p className="text-sm text-marbella-600">{language === 'en' ? testimonial.role.en : testimonial.role.zh}</p>
+                  </div>
                 </div>
-                
-                <p className="text-marbella-700 text-lg italic mb-6 flex-grow">
-                  "{language === 'en' ? testimonial.quote.en : testimonial.quote.zh}"
-                </p>
-                
-                <div className="mt-auto">
-                  <h4 className="font-semibold text-marbella-900">{testimonial.name}</h4>
-                  <p className="text-sm text-marbella-600">{language === 'en' ? testimonial.role.en : testimonial.role.zh}</p>
-                </div>
-              </div>
-            </AnimatedReveal>
-          ))}
+              </AnimatedReveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>
