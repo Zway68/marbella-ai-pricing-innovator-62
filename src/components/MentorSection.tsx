@@ -16,42 +16,6 @@ const mentors = [
     image: "/lovable-uploads/99a9c771-b961-43a7-a48a-35e580a4bfb8.png"
   },
   {
-    name: "Will Haver",
-    title: {
-      en: "Marbella Advisor and Mentor",
-      zh: "Marbella 顾问和导师"
-    },
-    bio: {
-      en: "Seasoned Leader and Serial Entrepreneur. Spearheaded the successful creation and growth of two ventures during his tenure at Wake Forest University: Accountable Care Limited Partnership and Haver Limited Partnership, a quantitative hedge fund.",
-      zh: "Will Haver 是资深领导者和连续创业者。在韦克森林大学任职期间，成功创建并发展了两个企业：Accountable Care有限合伙公司和Haver有限合伙公司，这是一家量化对冲基金。"
-    },
-    image: "/lovable-uploads/595aac52-df66-4a2e-bf3b-1e925eb3f817.png"
-  },
-  {
-    name: "Dr. Anna Yushuang Xu",
-    title: {
-      en: "Marbella Advisor and Mentor",
-      zh: "Marbella 顾问和导师"
-    },
-    bio: {
-      en: "Dr. Xu is the Founder and CEO of 111sign.com, an innovative AI-empowered design company. She holds an MBA from Harvard Business School. Dr. Xu did undergraduate studies at Peking University Health Science Center and the University of Vienna.",
-      zh: "Dr. Anna Yushuang Xu 是111sign.com的创始人兼首席执行官，这是一家创新的AI驱动设计公司。她持有哈佛商学院MBA学位。她在北京大学医学部和维也纳大学完成了本科学习。"
-    },
-    image: "/lovable-uploads/ee34822a-fa90-420b-b3af-39ce33017be6.png"
-  },
-  {
-    name: "Fiona Zhang",
-    title: {
-      en: "Marbella Advisor and Mentor",
-      zh: "Marbella 顾问和导师"
-    },
-    bio: {
-      en: "Fiona Zhang is the founder and CEO of AvaPlus, a cutting-edge software AI company that leverages digital avatars to enhance content creation. She is also the co-founder of ZLead, a global incubator based in Shanghai.",
-      zh: "Fiona Zhang 是AvaPlus的创始人兼CEO，这是一家利用数字化身增强内容创作的前沿软件AI公司。她还是总部位于上海的全球孵化器ZLead的联合创始人。"
-    },
-    image: "/lovable-uploads/f8ce437c-36a6-4fa2-9e44-cceccf52d9a8.png"
-  },
-  {
     name: "Xander Wu",
     title: {
       en: "Marbella Advisor and Mentor",
@@ -86,6 +50,42 @@ const mentors = [
       zh: "Dr. Tianfan Fu 是南京大学计算机科学系副教授。在此之前，他是伦斯勒理工学院(RPI)计算机科学系的终身轨道助理教授。他于2023年在佐治亚理工学院获得计算科学与工程系博士学位，并分别于2015年和2018年在上海交通大学获得计算机科学与工程系学士和硕士学位。他的研究兴趣在于药物发现和临床试验的机器学习，特别是在小分子和大分子药物设计的生成模型以及临床试验的深度表示学习方面。他的研究成果发表在NeurIPS、ICLR、Nature、Cell Patterns等顶级期刊和会议上。"
     },
     image: "/lovable-uploads/2e089280-d10b-42cf-a02b-2dde71882afb.png"
+  },
+  {
+    name: "Will Haver",
+    title: {
+      en: "Marbella Advisor and Mentor",
+      zh: "Marbella 顾问和导师"
+    },
+    bio: {
+      en: "Seasoned Leader and Serial Entrepreneur. Spearheaded the successful creation and growth of two ventures during his tenure at Wake Forest University: Accountable Care Limited Partnership and Haver Limited Partnership, a quantitative hedge fund.",
+      zh: "Will Haver 是资深领导者和连续创业者。在韦克森林大学任职期间，成功创建并发展了两个企业：Accountable Care有限合伙公司和Haver有限合伙公司，这是一家量化对冲基金。"
+    },
+    image: "/lovable-uploads/595aac52-df66-4a2e-bf3b-1e925eb3f817.png"
+  },
+  {
+    name: "Dr. Anna Yushuang Xu",
+    title: {
+      en: "Marbella Advisor and Mentor",
+      zh: "Marbella 顾问和导师"
+    },
+    bio: {
+      en: "Dr. Xu is the Founder and CEO of 111sign.com, an innovative AI-empowered design company. She holds an MBA from Harvard Business School. Dr. Xu did undergraduate studies at Peking University Health Science Center and the University of Vienna.",
+      zh: "Dr. Anna Yushuang Xu 是111sign.com的创始人兼首席执行官，这是一家创新的AI驱动设计公司。她持有哈佛商学院MBA学位。她在北京大学医学部和维也纳大学完成了本科学习。"
+    },
+    image: "/lovable-uploads/ee34822a-fa90-420b-b3af-39ce33017be6.png"
+  },
+  {
+    name: "Fiona Zhang",
+    title: {
+      en: "Marbella Advisor and Mentor",
+      zh: "Marbella 顾问和导师"
+    },
+    bio: {
+      en: "Fiona Zhang is the founder and CEO of AvaPlus, a cutting-edge software AI company that leverages digital avatars to enhance content creation. She is also the co-founder of ZLead, a global incubator based in Shanghai.",
+      zh: "Fiona Zhang 是AvaPlus的创始人兼CEO，这是一家利用数字化身增强内容创作的前沿软件AI公司。她还是总部位于上海的全球孵化器ZLead的联合创始人。"
+    },
+    image: "/lovable-uploads/f8ce437c-36a6-4fa2-9e44-cceccf52d9a8.png"
   }
 ];
 
