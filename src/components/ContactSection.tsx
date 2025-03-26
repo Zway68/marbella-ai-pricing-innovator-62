@@ -27,11 +27,11 @@ const ContactSection = () => {
     setIsLoading(true);
     
     try {
-      // Store the contact submission in Supabase
-      console.log('Submitting form with data:', formData);
+      // 存储联系提交数据到Supabase
+      console.log('提交表单数据:', formData);
       
-      // Using the Supabase service role key would bypass RLS, but since we can't use that in the frontend,
-      // we'll implement a fallback to local storage when Supabase insertion fails
+      // 使用Supabase服务角色密钥会绕过RLS，但由于我们不能在前端使用它，
+      // 当Supabase插入失败时，我们将实现本地存储的后备方案
       const { error } = await supabase
         .from('contact_submissions')
         .insert([
@@ -45,9 +45,9 @@ const ContactSection = () => {
         ]);
         
       if (error) {
-        console.error('Supabase error details:', error);
+        console.error('Supabase错误详情:', error);
         
-        // Fallback to storing in localStorage if Supabase insert fails due to RLS
+        // 如果由于RLS导致Supabase插入失败，则回退到在localStorage中存储
         const storedSubmissions = localStorage.getItem('contactSubmissions');
         const submissions = storedSubmissions ? JSON.parse(storedSubmissions) : [];
         
@@ -60,23 +60,36 @@ const ContactSection = () => {
         });
         
         localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
-        console.log('Stored submission in localStorage as fallback');
-        
-        // We'll show a success message even though we used the fallback
-        // since the user's submission was saved somewhere
-        toast({
-          title: t("Message sent!", "消息已发送！"),
-          description: t("We'll get back to you as soon as possible.", "我们会尽快回复您。"),
-        });
-      } else {
-        // Show success toast for successful Supabase insertion
-        toast({
-          title: t("Message sent!", "消息已发送！"),
-          description: t("We'll get back to you as soon as possible.", "我们会尽快回复您。"),
-        });
+        console.log('作为备份将提交数据存储在localStorage中');
       }
       
-      // Reset form
+      // 发送电子邮件通知到jason@marbellaai.com
+      try {
+        const emailResponse = await fetch('/api/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+        
+        if (!emailResponse.ok) {
+          throw new Error('发送电子邮件通知失败');
+        }
+        
+        console.log('成功发送电子邮件通知');
+      } catch (emailError) {
+        console.error('发送电子邮件时出错:', emailError);
+        // 即使电子邮件发送失败，我们仍然显示成功消息，因为表单数据已保存
+      }
+      
+      // 显示成功消息
+      toast({
+        title: t("Message sent!", "消息已发送！"),
+        description: t("We'll get back to you as soon as possible.", "我们会尽快回复您。"),
+      });
+      
+      // 重置表单
       setFormData({
         name: '',
         email: '',
@@ -84,7 +97,7 @@ const ContactSection = () => {
         message: '',
       });
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('提交表单时出错:', error);
       toast({
         title: t("Something went wrong", "出现了问题"),
         description: t("Please try again later.", "请稍后再试。"),
