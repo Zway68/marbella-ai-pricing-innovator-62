@@ -63,17 +63,20 @@ const ContactSection = () => {
         console.log('作为备份将提交数据存储在localStorage中');
       }
       
-      // 发送电子邮件通知到jason@marbellaai.com
+      // 发送电子邮件通知
       try {
         const emailResponse = await fetch('/api/send-email', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJneWplamV0YnR6dW5mYnltdWVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEzOTM0NjYsImV4cCI6MjA1Njk2OTQ2Nn0.4XFdPv5Z8OH-DulzR8JSliMG1GDCa3qIi4Pb0Fqt6YA'}`
           },
           body: JSON.stringify(formData),
         });
         
         if (!emailResponse.ok) {
+          const errorData = await emailResponse.json();
+          console.error('电子邮件响应错误:', errorData);
           throw new Error('发送电子邮件通知失败');
         }
         
