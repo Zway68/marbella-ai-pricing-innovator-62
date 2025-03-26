@@ -25,17 +25,6 @@ const testimonials = [
       en: "Marbella Education's AI course was an incredible experience that I absolutely loved. Not only did it deepen my understanding of AI fundamentals like machine learning and neural networks, but it also showed me how AI is revolutionizing industries.",
       zh: "Marbella Education的AI课程是一次我非常喜爱的难以置信的经历。它不仅加深了我对机器学习和神经网络等AI基础知识的理解，还向我展示了AI如何革新各行各业。"
     }
-  },
-  {
-    name: "Dr. Jason Dou",
-    role: {
-      en: "Postdoc Research Fellow in AI at Harvard",
-      zh: "哈佛大学AI博士后研究员"
-    },
-    quote: {
-      en: "Dr. Dou and his team revolutionized the way I think and the way I work in the digital age. The Marbella AI Thinking Bootcamp is a must for new graduate want to break into the AI domain.",
-      zh: "杜博士和他的团队彻底改变了我在数字时代的思考和工作方式。Marbella AI思维训练营对于想要进入AI领域的新毕业生来说是必不可少的。"
-    }
   }
 ];
 
