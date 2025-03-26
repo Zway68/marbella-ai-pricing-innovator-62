@@ -85,7 +85,7 @@ const mentors = [
       en: "Dr. Tianfan Fu is an associate professor at Computer Science Department, Nanjing University. Before that, he was a tenure-track assistant professor at Rensselaer Polytechnic Institute (RPI). He received his Ph.D. from Georgia Institute of Technology, and his B.S. and M.S. from Shanghai Jiao Tong University. His research focuses on machine learning for drug discovery and clinical trials, with publications in leading AI conferences and journals including NeurIPS, ICLR, Nature, and Cell Patterns.",
       zh: "Dr. Tianfan Fu 是南京大学计算机科学系副教授。在此之前，他是伦斯勒理工学院(RPI)计算机科学系的终身轨道助理教授。他于2023年在佐治亚理工学院获得计算科学与工程系博士学位，并分别于2015年和2018年在上海交通大学获得计算机科学与工程系学士和硕士学位。他的研究兴趣在于药物发现和临床试验的机器学习，特别是在小分子和大分子药物设计的生成模型以及临床试验的深度表示学习方面。他的研究成果发表在NeurIPS、ICLR、Nature、Cell Patterns等顶级期刊和会议上。"
     },
-    image: "/placeholder.svg"
+    image: "/lovable-uploads/2e089280-d10b-42cf-a02b-2dde71882afb.png"
   }
 ];
 
