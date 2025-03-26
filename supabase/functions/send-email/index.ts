@@ -29,10 +29,11 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("接收到联系表单数据:", formData);
 
-    // 发送电子邮件给两个收件人: jason@marbellaai.com 和 marbellaeducation@gmail.com
+    // 在测试阶段，Resend仅允许发送到注册邮箱，所以我们临时只发到marbellaeducation@gmail.com
+    // 待验证域名后，可以恢复多收件人功能
     const emailResponse = await resend.emails.send({
       from: "Marbella AI Contact <onboarding@resend.dev>",
-      to: ["jason@marbellaai.com", "marbellaeducation@gmail.com"],
+      to: ["marbellaeducation@gmail.com"],
       subject: `新联系消息 - 来自 ${name}`,
       html: `
         <h1>新联系表单提交</h1>
