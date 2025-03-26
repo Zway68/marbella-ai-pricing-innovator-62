@@ -16,18 +16,6 @@ const mentors = [
     image: "/lovable-uploads/99a9c771-b961-43a7-a48a-35e580a4bfb8.png"
   },
   {
-    name: "Xander Wu",
-    title: {
-      en: "Marbella Advisor and Mentor",
-      zh: "Marbella 顾问和导师"
-    },
-    bio: {
-      en: "Xander Wu is the fund manager at the Future Foundation, where he focuses on investing in global equities. His extensive experience includes roles at major banks and brokerage firms in China.",
-      zh: "Xander Wu 是未来基金会的基金经理，专注于全球股票投资。他拥有丰富的经验，曾在中国的主要银行和券商担任职务。"
-    },
-    image: "/lovable-uploads/513e6c63-9692-4919-98f7-b13806a1d698.png"
-  },
-  {
     name: "Sally Su",
     title: {
       en: "Marbella Advisor and Mentor",
@@ -38,6 +26,18 @@ const mentors = [
       zh: "Sally Su 是Happy Journey Care Home的创始人兼董事总经理，这是萨克拉门托地区首屈一指的辅助生活设施网络。凭借金融、技术和运营背景，Sally领导着萨克拉门托地区各地点的扩张，实现了45%的年增长率并保持了100%的客户满意度。"
     },
     image: "/lovable-uploads/0744076c-ac86-43ee-9590-37afa5a83813.png"
+  },
+  {
+    name: "Xander Wu",
+    title: {
+      en: "Marbella Advisor and Mentor",
+      zh: "Marbella 顾问和导师"
+    },
+    bio: {
+      en: "Xander Wu is the fund manager at the Future Foundation, where he focuses on investing in global equities. His extensive experience includes roles at major banks and brokerage firms in China.",
+      zh: "Xander Wu 是未来基金会的基金经理，专注于全球股票投资。他拥有丰富的经验，曾在中国的主要银行和券商担任职务。"
+    },
+    image: "/lovable-uploads/513e6c63-9692-4919-98f7-b13806a1d698.png"
   },
   {
     name: "Dr. Tianfan Fu",
