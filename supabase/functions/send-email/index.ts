@@ -18,7 +18,7 @@ interface ContactFormData {
 }
 
 const handler = async (req: Request): Promise<Response> => {
-  // 处理CORS预检请求
+  // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
@@ -27,25 +27,25 @@ const handler = async (req: Request): Promise<Response> => {
     const formData: ContactFormData = await req.json();
     const { name, email, phone, message } = formData;
 
-    console.log("接收到联系表单数据:", formData);
+    console.log("Received contact form data:", formData);
 
-    // 在测试阶段，Resend仅允许发送到注册邮箱，所以我们临时只发到marbellaeducation@gmail.com
-    // 待验证域名后，可以恢复多收件人功能
+    // During testing, Resend only allows sending to verified emails, so temporarily sending only to marbellaeducation@gmail.com
+    // After domain verification, multiple recipients can be restored
     const emailResponse = await resend.emails.send({
       from: "Marbella AI Contact <onboarding@resend.dev>",
       to: ["marbellaeducation@gmail.com"],
-      subject: `新联系消息 - 来自 ${name}`,
+      subject: `New Contact Message - From ${name}`,
       html: `
-        <h1>新联系表单提交</h1>
-        <p><strong>姓名:</strong> ${name}</p>
-        <p><strong>电子邮件:</strong> ${email}</p>
-        <p><strong>电话号码:</strong> ${phone || "未提供"}</p>
-        <p><strong>消息:</strong></p>
+        <h1>New Contact Form Submission</h1>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone Number:</strong> ${phone || "Not provided"}</p>
+        <p><strong>Message:</strong></p>
         <p>${message}</p>
       `,
     });
 
-    console.log("邮件发送结果:", emailResponse);
+    console.log("Email sending result:", emailResponse);
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
@@ -55,7 +55,7 @@ const handler = async (req: Request): Promise<Response> => {
       },
     });
   } catch (error: any) {
-    console.error("发送邮件时发生错误:", error);
+    console.error("Error sending email:", error);
     return new Response(
       JSON.stringify({ error: error.message }),
       {
