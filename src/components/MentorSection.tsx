@@ -74,6 +74,18 @@ const mentors = [
       zh: "Sally Su 是Happy Journey Care Home的创始人兼董事总经理，这是萨克拉门托地区首屈一指的辅助生活设施网络。凭借金融、技术和运营背景，Sally领导着萨克拉门托地区各地点的扩张，实现了45%的年增长率并保持了100%的客户满意度。"
     },
     image: "/lovable-uploads/0744076c-ac86-43ee-9590-37afa5a83813.png"
+  },
+  {
+    name: "Dr. Tianfan Fu",
+    title: {
+      en: "Marbella Advisor and Mentor",
+      zh: "Marbella 顾问和导师"
+    },
+    bio: {
+      en: "Dr. Tianfan Fu is an associate professor at Computer Science Department, Nanjing University. Before that, he was a tenure-track assistant professor at Rensselaer Polytechnic Institute (RPI). He received his Ph.D. from Georgia Institute of Technology, and his B.S. and M.S. from Shanghai Jiao Tong University. His research focuses on machine learning for drug discovery and clinical trials, with publications in leading AI conferences and journals including NeurIPS, ICLR, Nature, and Cell Patterns.",
+      zh: "Dr. Tianfan Fu 是南京大学计算机科学系副教授。在此之前，他是伦斯勒理工学院(RPI)计算机科学系的终身轨道助理教授。他于2023年在佐治亚理工学院获得计算科学与工程系博士学位，并分别于2015年和2018年在上海交通大学获得计算机科学与工程系学士和硕士学位。他的研究兴趣在于药物发现和临床试验的机器学习，特别是在小分子和大分子药物设计的生成模型以及临床试验的深度表示学习方面。他的研究成果发表在NeurIPS、ICLR、Nature、Cell Patterns等顶级期刊和会议上。"
+    },
+    image: "/placeholder.svg"
   }
 ];
 
