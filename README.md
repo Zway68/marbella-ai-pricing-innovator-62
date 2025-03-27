@@ -1,16 +1,16 @@
-# Welcome to your Lovable project
+# Welcome to Marbella Education's Website 
 
 ## Project info
 
 **URL**: https://lovable.dev/projects/17c7367f-6528-4afb-b48a-efc34ba8092c
 
-## How can I edit this code?
+## How to edit this code?
 
-There are several ways of editing your application.
+There are several ways of editing my application.
 
 **Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/17c7367f-6528-4afb-b48a-efc34ba8092c) and start prompting.
+Simply visit the [Lovable Project](https://lovable.dev/projects/17c7367f-6528-4afb-b48a-efc34ba8092c) remix my project and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
 
