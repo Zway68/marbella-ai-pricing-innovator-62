@@ -22,8 +22,8 @@ const mentors = [
       zh: "Marbella 顾问和导师"
     },
     bio: {
-      en: "Xander Wu is the fund manager at the Future Foundation, where he focuses on investing in global equities. His extensive experience includes roles at major banks and brokerage firms in China.",
-      zh: "Xander Wu 是未来基金会的基金经理，专注于全球股票投资。他拥有丰富的经验，曾在中国的主要银行和券商担任职务。"
+      en: "Xander Wu is the fund manager at the Future Foundation, where he focuses on investing in global equities. He is a graduate of Harvard College. His extensive experience includes roles at major banks and brokerage firms in China.",
+      zh: "Xander Wu 是未来基金会的基金经理，专注于全球股票投资。他本科毕业于哈佛大学（Harvard College）。他拥有丰富的经验，曾在中国的主要银行和券商担任职务。"
     },
     image: "/lovable-uploads/513e6c63-9692-4919-98f7-b13806a1d698.png"
   },
@@ -34,8 +34,8 @@ const mentors = [
       zh: "Marbella 顾问和导师"
     },
     bio: {
-      en: "Sally Su is the Founder and Managing Director of Happy Journey Care Home, the premier network of assisted living facilities in the Sacramento area. With a background in finance, technology and operations, Sally leads the expansion of locations throughout the Sacramento Area, achieving 45% annual growth rate and maintaining 100% customer satisfaction. She is a graduate of Harvard Business School.",
-      zh: "Sally Su 是Happy Journey Care Home的创始人兼董事总经理，这是萨克拉门托地区首屈一指的辅助生活设施网络。凭借金融、技术和运营背景，Sally领导着萨克拉门托地区各地点的扩张，实现了45%的年增长率并保持了100%的客户满意度。她毕业于哈佛商学院。"
+      en: "Sally Su is the Founder and Managing Director of Happy Journey Care Home, the premier network of assisted living facilities in the Sacramento area. She is a graduate of Harvard Business School. With a background in finance, technology and operations, Sally leads the expansion of locations throughout the Sacramento Area, achieving 45% annual growth rate and maintaining 100% customer satisfaction.",
+      zh: "Sally Su 是Happy Journey Care Home的创始人兼董事总经理，这是萨克拉门托地区首屈一指的辅助生活设施网络。她毕业于哈佛商学院。凭借金融、技术和运营背景，Sally领导着萨克拉门托地区各地点的扩张，实现了45%的年增长率并保持了100%的客户满意度。"
     },
     image: "/lovable-uploads/0744076c-ac86-43ee-9590-37afa5a83813.png"
   },
